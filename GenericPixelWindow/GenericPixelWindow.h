@@ -4,6 +4,7 @@
 class GenericPixelWindow : public PixelWindow {
 private:
 	int frameNum;
+	DrawableObject* gObj;
 public:
 	using PixelWindow::PixelWindow;
 	virtual void MakeActive();

@@ -16,7 +16,9 @@ namespace Maths {
  *	Constructor Definition
  */
 PixelManager::PixelManager(PixelWindow& windowReference, int w, int h, Color bgColor)
-	: pixelWindow(windowReference), backgroundColor(bgColor), drawColor(Paint::White)
+	: pixelWindow(windowReference), 
+	backgroundColor(bgColor), 
+	drawColor(Paint::White)
 {
 	pixels.resize(w);
 	for (int i = 0; i < w; i++) {
@@ -107,7 +109,7 @@ void PixelManager::AddObject(DrawableObject* o)
 }
 void PixelManager::DrawObjects() {
 	for (int i = 0; i != objectList.size(); ++i) {
-		objectList[i]->Draw();
+		objectList[i]->Draw(*this);
 	}
 }
 bool PixelManager::RemoveObject(DrawableObject* targetObject) {

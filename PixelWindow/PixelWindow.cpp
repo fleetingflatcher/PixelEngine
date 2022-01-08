@@ -15,6 +15,7 @@ PixelWindow::PixelWindow(int px_size, int num_x, int num_y, bool grid, Color bgC
 	PXLM(new PixelManager(*this, num_x, num_y, bgColor)),
 	SDLM(new SDLManager(*this, num_x, num_y, px_size, grid))
 {
+	SDL_PollEvent(&sdlEvent);
 	SDLM->Start(grid);
 };
 PixelWindow::~PixelWindow()

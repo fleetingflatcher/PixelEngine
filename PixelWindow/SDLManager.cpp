@@ -37,7 +37,9 @@ SDLManager::SDLManager(PixelWindow& windowReference,
 			rects[i][j] = { i * sz, j * sz, sz, sz };
 		}
 }
-
+bool SDLManager::Start(bool grid) {
+	return SDLManager::Start(grid, Paint::Black);
+}
 bool SDLManager::Start(bool grid, Color bgColor) {
 	bool successFlag = true;
 

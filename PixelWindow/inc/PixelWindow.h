@@ -27,7 +27,7 @@ private:
 
 protected:
 	bool active;
-	SDL_Event event;
+	SDL_Event sdlEvent;
 
 //	Public Data Member declarations
 public:
@@ -39,13 +39,6 @@ private:
 
 //	Public Method declarations
 public:
-	// Delegating Constructors
-	PixelWindow(int px_size, int num_x, int num_y)
-		: PixelWindow(px_size, num_x, num_y, false, Paint::Black) {};
-	PixelWindow(int px_size, int num_x, int num_y, bool grid)
-		: PixelWindow(px_size, num_x, num_y, grid, Paint::Black) {};
-	PixelWindow(int px_size, int num_x, int num_y, Color bgColor)
-		: PixelWindow(px_size, num_x, num_y, false, bgColor) {};
 	// Primary Constructor & Destructor
 	PixelWindow(int px_size, int num_x, int num_y, bool grid = false, Color bgColor = Paint::Black);
 	~PixelWindow();

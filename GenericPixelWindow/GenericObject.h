@@ -1,16 +1,20 @@
 #include "../PixelWindow/inc/DrawableObject.h"
 #include "../PixelWindow/inc/PixelManager.h"
-#include <vector>
+#include <complex>
 
-using namespace std;
+
+
 
 class GenericObject : public DrawableObject {
+private:
+	
 public:
 	GenericObject(int x, int y) {
 		location = {x, y};
 	}
-	virtual void Draw(PixelManager& pxlm) override {
+	virtual void Draw(PixelManager& pxlm) {
 		pxlm.SetDrawColor(Paint::White);
 		pxlm.DrawPixel(location);
 	}
+
 };
