@@ -42,10 +42,10 @@ void PixelManager::SetDrawColor(const Color c) {
 }
 
 void PixelManager::DrawPixel(Pixel* p) {
-	p->color = drawColor;
+	if (p != nullptr) p->color = drawColor;
 }
 void PixelManager::DrawPixel(Pixel* p, Color newColor) {
-	p->color = newColor;
+	if (p != nullptr) p->color = newColor;
 }
 void PixelManager::DrawPixel(std::complex<int> loc) {
 	DrawPixel(loc.real(), loc.imag());
@@ -54,10 +54,10 @@ void PixelManager::DrawPixel(std::complex<int> loc, Color newColor) {
 	DrawPixel(loc.real(), loc.imag(), newColor);
 }
 void PixelManager::DrawPixel(int x, int y) {
-	pixels[x][y].color = drawColor;
+	if (x < pixels.size() && y < pixels[x].size()) pixels[x][y].color = drawColor;
 }
 void PixelManager::DrawPixel(int x, int y, Color newColor) {
-	pixels[x][y].color = newColor;
+	if (x < pixels.size() && y < pixels[x].size()) pixels[x][y].color = newColor;
 }
 
 /*
