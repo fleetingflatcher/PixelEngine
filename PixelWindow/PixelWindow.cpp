@@ -4,10 +4,14 @@
 /*
  *	PixelWindow Class method definitions
  */
+//	PROTECTED METHODS
+
+
 
 //	PUBLIC METHODS
 // All other constructors delegate to the below universal constructor.
 PixelWindow::PixelWindow(int px_size, int num_x, int num_y, bool grid, Color bgColor) :
+	clock(),
 	active(true),
 	PIXEL_SIZE(px_size),
 	NUM_PIXELS_X(num_x),
@@ -24,7 +28,6 @@ PixelWindow::~PixelWindow()
 	SDLM->Quit();
 	delete SDLM;
 };
-
 int PixelWindow::getPixelSize() {
 	return PIXEL_SIZE;
 };

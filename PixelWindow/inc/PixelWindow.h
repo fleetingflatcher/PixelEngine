@@ -1,16 +1,14 @@
 #pragma once
 #include "Pixel.h"
+#include "Tickers.hpp"
 #include "Color.hpp"
 #include <vector>
 #include <SDL.h>
 #include "PixelManager.h"
 #include "SDLManager.h"
 
-
-using namespace std;
-
 class PixelWindow {
-
+	
 //	Virtual functions, to be overriden by derived classes
 public:
 	virtual void MakeActive() = 0;
@@ -27,6 +25,7 @@ private:
 
 protected:
 	bool active;
+	Clock clock;
 	SDL_Event sdlEvent;
 
 //	Public Data Member declarations
@@ -34,8 +33,9 @@ public:
 	SDLManager* SDLM;
 	PixelManager* PXLM;
 
-//	Private Method declarations
-private:
+//	Inheritable-Private Method declarations
+protected:
+	
 
 //	Public Method declarations
 public:

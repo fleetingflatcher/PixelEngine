@@ -3,7 +3,8 @@
 
 class GenericPixelWindow : public PixelWindow {
 private:
-	int frameNum;
+	static constexpr int MV_DELAY = 335;
+	Timer mvTimer { MV_DELAY };
 	DrawableObject* gObj;
 public:
 	using PixelWindow::PixelWindow;

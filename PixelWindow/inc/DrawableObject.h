@@ -3,30 +3,38 @@
 
 class PixelManager;
 
+namespace Compass {
+	using namespace std;
+	constexpr complex<int> Null{ 0, 0 };
+	constexpr complex<int> Up{ 0, -1 };
+	constexpr complex<int> Dwn{ 0, 1 };
+	constexpr complex<int> Lft{ -1, 0 };
+	constexpr complex<int> Rht{ 1, 0 };
+};
+
 class DrawableObject {
 private:
 protected: 
-	static constexpr std::complex<int> _UP{ 0, -1 };
-	static constexpr std::complex<int> _DWN{ 0, 1 };
-	static constexpr std::complex<int> _RHT{ 1, 0 };
-	static constexpr std::complex<int> _LFT{ -1, 0 };
-	
 	DrawableObject();
 public:
 	virtual void Draw(PixelManager& pxlm) = 0;
 	bool shown;
 	std::complex<int> location;
 
+	std::complex<int> mvDirection;
+	void mv() {
+		location += mvDirection;
+	}
 	void mvUp() {
-		location += _UP;
+		location += Compass::Up;
 	}
 	void mvDown() {
-		location += _DWN;
+		location += Compass::Dwn;
 	}
 	void mvLeft() {
-		location += _LFT;
+		location += Compass::Lft;
 	}
 	void mvRight() {
-		location += _RHT;
+		location += Compass::Rht;
 	}
 };
