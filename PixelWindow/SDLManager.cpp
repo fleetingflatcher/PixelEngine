@@ -40,7 +40,7 @@ SDLManager::SDLManager(PixelWindow& windowReference,
 bool SDLManager::Start(bool grid) {
 	return SDLManager::Start(grid, Paint::Black);
 }
-bool SDLManager::(bool grid, Color bgColor) {
+bool SDLManager::Start(bool grid, Color bgColor) {
 	bool successFlag = true;
 
 	if (SDL_Init(SDL_INIT_EVERYTHING < 0)) {
